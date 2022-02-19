@@ -1,0 +1,77 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""Breed entity"""
+type Breed {
+  _id: String!
+  name: String!
+  cats: [Cat!]
+}
+
+"""Cat entity"""
+type Cat {
+  _id: String!
+  name: String!
+  dob: DateTime!
+  breedId: String!
+  breed: Breed!
+  sex: Sex!
+  description: String!
+  note: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+"""Enum to determine sex of Cat"""
+enum Sex {
+  MALE
+  FEMALE
+}
+
+type Query {
+  getAllCat: [Cat!]!
+  getCatById(_id: String!): Cat!
+  getAllBreed: [Breed!]!
+  getBreedById(_id: String!): Breed!
+}
+
+type Mutation {
+  createCat(createCatInput: CreateCatInput!): Cat!
+  updateCatById(updateCatInput: UpdateCatInput!): Cat!
+  deleteCatById(_id: String!): Boolean!
+  createBreed(createBreedInput: CreateBreedInput!): Breed!
+  updateBreedById(updateBreedInput: UpdateBreedInput!): Breed!
+  deleteBreedById(_id: String!): Boolean!
+}
+
+input CreateCatInput {
+  name: String!
+  dob: DateTime!
+  sex: Sex!
+  breedId: String!
+  description: String!
+  note: String!
+}
+
+input UpdateCatInput {
+  name: String
+  dob: DateTime
+  sex: Sex
+  breedId: String
+  description: String
+  note: String
+  _id: String!
+}
+
+input CreateBreedInput {
+  name: String!
+}
+
+input UpdateBreedInput {
+  name: String
+  _id: String!
+}
