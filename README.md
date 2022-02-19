@@ -8,7 +8,7 @@ This repository contain GraphQL API created to study GraphQL with basic Relation
 
 ### SQL Database
 
-![Database-design](https://github.com/bondopangaji/NestJS-Cat-GraphQL-API/blob/main/cat-rdd.png)
+![Database-design](https://github.com/bondopangaji/NestJS-GraphQL-API/blob/main/cat-rdd.png)
 
 ### No-SQL Database
 
